@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Questions</title>
+</head>
+<body>
+    <h2>Questions</h2>
+    <ul>
+        {% for question in questions %}
+            <li>{{ question.text }} ({{ question.category }}, Difficulty: {{ question.difficulty }})</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

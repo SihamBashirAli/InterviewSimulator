@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Interview Session</title>
+</head>
+<body>
+    <h2>Interview Session</h2>
+    <div id="question-container">
+        <p id="question"></p>
+        <input type="text" id="response" placeholder="Type your answer here...">
+        <button onclick="nextQuestion()">Next</button>
+    </div>
+
+    <script>
+        let questions = {{ questions|safe }};
+        let currentQuestionIndex = 0;
+
+        function nextQuestion() {
+            if (currentQuestionIndex < questions.length) {
+                document.getElementById('question').innerText = questions[currentQuestionIndex].fields.text;
+                currentQuestionIndex++;
+            } else {
+                document.getElementById('question').innerText = "Interview complete!";
+            }
+        }
+
+        window.onload = function() {
+            nextQuestion();
+        };
+    </script>
+</body>
+</html>
