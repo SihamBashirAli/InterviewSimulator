@@ -1,0 +1,30 @@
+<!-- templates/simulator/interview_home.html -->
+{% extends 'base.html' %}
+
+{% block title %}Interview Home{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-center">Interview Simulator</h1>
+    <div id="interview-questions" class="mt-4">
+        <h2>Interview Questions:</h2>
+        <div id="questions">
+            <form id="answers-form" method="post">
+                {% csrf_token %}
+                {% if interview_questions %}
+                    {% for question in interview_questions %}
+                        <div class="mb-4">
+                            <p><strong>Question {{ forloop.counter }}:</strong> {{ question }}</p>
+                            <textarea class="form-control" name="answer_{{ forloop.counter }}" rows="4" placeholder="Type your answer here..."></textarea>
+                        </div>
+                    {% endfor %}
+                    <button type="submit" class="btn btn-primary">Submit Answers</button>
+                {% else %}
+                    <p>No questions available.</p>
+                {% endif %}
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

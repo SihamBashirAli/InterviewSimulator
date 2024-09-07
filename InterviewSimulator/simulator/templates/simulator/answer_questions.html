@@ -1,0 +1,26 @@
+<!-- templates/simulator/answer_questions.html -->
+{% extends 'base.html' %}
+
+{% block title %}Answer Questions{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-center">Interview Questions</h1>
+    <form action="{% url 'answer_questions' %}" method="POST" class="mt-4">
+        {% csrf_token %}
+        
+        {% for question in interview_questions %}
+            <div class="mb-4">
+                <label for="answer_{{ forloop.counter0 }}"><strong>Question {{ forloop.counter }}:</strong> {{ question }}</label>
+                <textarea class="form-control" id="answer_{{ forloop.counter0 }}" name="answer_{{ forloop.counter0 }}" rows="4" required></textarea>
+            </div>
+        {% endfor %}
+        
+        <button type="submit" class="btn btn-primary">Submit Answers</button>
+    </form>
+</div>
+{% endblock %}
+
+
+
+

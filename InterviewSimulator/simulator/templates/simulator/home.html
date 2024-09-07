@@ -1,0 +1,16 @@
+<!-- templates/simulator/home.html -->
+{% extends 'base.html' %}
+
+{% block title %}Home - Interview Simulator{% endblock %}
+
+{% block body_class %}home-page{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Welcome to the Interview Simulator</h1>
+    <p>Master your interviews with realistic simulations.</p>
+    <a class="btn btn-primary" href="{% url 'interview' %}">Ask the Assistant a Question</a>
+    <a class="btn btn-secondary" href="{% url 'setup_interview' %}">Setup Interview</a>
+</div>
+{% endblock %}
+

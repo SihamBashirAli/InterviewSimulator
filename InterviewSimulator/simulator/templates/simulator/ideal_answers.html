@@ -1,0 +1,27 @@
+<!-- templates/simulator/ideal_answers.html -->
+{% extends 'base.html' %}
+
+{% block title %}Ideal Answers{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-center">Ideal Answers</h1>
+    
+    {% for question, user_answer, ideal_answer in combined_data %}
+        <div class="mb-4">
+            <h3>Question {{ forloop.counter }}: {{ question }}</h3>
+            <p><strong>Your Answer:</strong></p>
+            <p>{{ user_answer }}</p>
+            <p><strong>Ideal Answer:</strong></p>
+            <p>{{ ideal_answer }}</p>
+        </div>
+    {% endfor %}
+    
+    <div class="text-center mt-4">
+        <a href="{% url 'setup_interview' %}" class="btn btn-primary">Start a New Interview</a>
+    </div>
+</div>
+{% endblock %}
+
+
+

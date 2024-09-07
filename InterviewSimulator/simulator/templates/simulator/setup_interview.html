@@ -1,0 +1,119 @@
+{% extends 'base.html' %}
+
+{% block title %}Setup Your Interview{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-center">Setup Your Interview</h1>
+    <form id="setup-form" method="post" class="mt-4">
+        {% csrf_token %}
+        
+        
+        <!-- Subject Area Dropdown -->
+        <label for="subject-area">Subject Area:</label>
+        <select id="subject-area" name="subject_area" required>
+            <option value="">Select Subject Area</option>
+            <option value="Technology">Technology</option>
+            <option value="Finance">Finance</option>
+            <option value="Healthcare">Healthcare</option>
+            <option value="Education">Education</option>
+            <!-- Add other options as needed -->
+        </select><br><br>
+        
+        <!-- Number of Questions Dropdown -->
+        <label for="num-questions">Number of Questions:</label>
+        <select id="num-questions" name="num_questions" required>
+            <option value="">Select Number of Questions</option>
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+            <!-- Add other options as needed -->
+        </select><br><br>
+        
+        <!-- Difficulty Level Dropdown -->
+        <label for="difficulty-level">Level of Difficulty:</label>
+        <select id="difficulty-level" name="difficulty_level" required>
+            <option value="">Select Difficulty Level</option>
+            <option value="Easy">Easy</option>
+            <option value="Medium">Medium</option>
+            <option value="Hard">Hard</option>
+        </select><br><br>
+
+        <!-- Time Per Question Dropdown -->
+        <label for="time-limit">Time to Answer Each Question (minutes):</label>
+        <select id="time-limit" name="time_limit" required>
+            <option value="">Select Time Limit</option>
+            <option value="1">1 minute</option>
+            <option value="2">2 minutes</option>
+            <option value="5">5 minutes</option>
+            <!-- Add other options as needed -->
+        </select><br><br>
+
+        <!-- Industry or Domain Dropdown -->
+        <label for="industry">Industry or Domain:</label>
+        <select id="industry" name="industry" required>
+            <option value="">Select Industry</option>
+            <option value="Technology">Technology</option>
+            <option value="Finance">Finance</option>
+            <option value="Healthcare">Healthcare</option>
+            <option value="Education">Education</option>
+            <!-- Add other options as needed -->
+        </select><br><br>
+
+        <!-- Job Role Dropdown -->
+        <label for="job-role">Job Role:</label>
+        <select id="job-role" name="job_role" required>
+            <option value="">Select Job Role</option>
+            <option value="Software Engineer">Software Engineer</option>
+            <option value="Marketing Manager">Marketing Manager</option>
+            <option value="Data Analyst">Data Analyst</option>
+            <!-- Add other options as needed -->
+        </select><br><br>
+
+        <!-- Competencies or Skills Dropdown -->
+        <label for="skills">Competencies or Skills:</label>
+        <select id="skills" name="skills" required>
+            <option value="">Select Skills</option>
+            <option value="Problem-solving">Problem-solving</option>
+            <option value="Communication">Communication</option>
+            <option value="Technical Expertise">Technical Expertise</option>
+            <option value="Leadership">Leadership</option>
+            <!-- Add other options as needed -->
+        </select><br><br>
+
+        <!-- Interview Format Dropdown -->
+        <label for="format">Interview Format:</label>
+        <select id="format" name="format" required>
+            <option value="">Select Format</option>
+            <option value="Behavioral">Behavioral</option>
+            <option value="Technical">Technical</option>
+            <option value="Case Study">Case Study</option>
+            <option value="Panel">Panel</option>
+            <!-- Add other options as needed -->
+        </select><br><br>
+
+        <!-- Question Types Dropdown -->
+        <label for="question-type">Question Types:</label>
+        <select id="question-type" name="question_type" required>
+            <option value="">Select Question Type</option>
+            <option value="Open-ended">Open-ended</option>
+            <option value="Situational">Situational</option>
+            <option value="Technical">Technical</option>
+            <option value="Analytical">Analytical</option>
+            <!-- Add other options as needed -->
+        </select><br><br>
+
+        <!-- Experience Level Dropdown -->
+        <label for="experience-level">Experience Level:</label>
+        <select id="experience-level" name="experience_level" required>
+            <option value="">Select Experience Level</option>
+            <option value="Entry-level">Entry-level</option>
+            <option value="Mid-level">Mid-level</option>
+            <option value="Senior-level">Senior-level</option>
+        </select><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+    <!-- Update the form action to post to the new view -->
+
+    {% endblock %}
